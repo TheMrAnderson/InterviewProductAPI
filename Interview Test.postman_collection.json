@@ -1,0 +1,573 @@
+{
+	"info": {
+		"_postman_id": "418369d3-bf14-4f81-a419-a9578307f669",
+		"name": "Interview Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7944123"
+	},
+	"item": [
+		{
+			"name": "All Parameters - User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7085/api/Product?searchName=a&searchCategory=a&searchPriceLow=2&searchPriceHigh=20&sortOrder=price desc,category,name&page=2&limit=75",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7085",
+					"path": [
+						"api",
+						"Product"
+					],
+					"query": [
+						{
+							"key": "searchName",
+							"value": "a"
+						},
+						{
+							"key": "searchCategory",
+							"value": "a"
+						},
+						{
+							"key": "searchPriceLow",
+							"value": "2"
+						},
+						{
+							"key": "searchPriceHigh",
+							"value": "20"
+						},
+						{
+							"key": "sortOrder",
+							"value": "price desc,category,name"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "75"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Undefined Data Request - Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "456",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7085/api/Product?searchName=undefined%20data",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7085",
+					"path": [
+						"api",
+						"Product"
+					],
+					"query": [
+						{
+							"key": "searchName",
+							"value": "undefined%20data"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drop Table - SuperAdmin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "789",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7085/api/Product?searchName=%3B%20DROP%20TABLE%20Product%3B",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7085",
+					"path": [
+						"api",
+						"Product"
+					],
+					"query": [
+						{
+							"key": "searchName",
+							"value": "%3B%20DROP%20TABLE%20Product%3B"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "No Parameters - No Auth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7085/api/Product",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7085",
+					"path": [
+						"api",
+						"Product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "No Parameters - User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7085/api/Product",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7085",
+					"path": [
+						"api",
+						"Product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Name - SuperAdmin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "789",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7085/api/Product?searchName=alize",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7085",
+					"path": [
+						"api",
+						"Product"
+					],
+					"query": [
+						{
+							"key": "searchName",
+							"value": "alize"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Price Min - User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Bearer",
+						"value": "123"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7085/api/Product?searchPriceLow=10",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7085",
+					"path": [
+						"api",
+						"Product"
+					],
+					"query": [
+						{
+							"key": "searchPriceLow",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Price Min and Max - Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "456",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7085/api/Product?searchPriceLow=10&searchPriceHigh=12",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7085",
+					"path": [
+						"api",
+						"Product"
+					],
+					"query": [
+						{
+							"key": "searchPriceLow",
+							"value": "10"
+						},
+						{
+							"key": "searchPriceHigh",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Price Max - Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "456",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7085/api/Product?searchPriceHigh=15",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7085",
+					"path": [
+						"api",
+						"Product"
+					],
+					"query": [
+						{
+							"key": "searchPriceHigh",
+							"value": "15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product - Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "456",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Test Product\",\r\n  \"price\": 2.99,\r\n  \"category\": \"Test Category\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7085/api/Product",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7085",
+					"path": [
+						"api",
+						"Product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product - User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Test Product\",\r\n  \"price\": 2.99,\r\n  \"category\": \"Test Category\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7085/api/Product",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7085",
+					"path": [
+						"api",
+						"Product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - SuperAdmin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "789",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7085/api/Product?id=1001",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7085",
+					"path": [
+						"api",
+						"Product"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "456",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7085/api/Product?id=1001",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7085",
+					"path": [
+						"api",
+						"Product"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update - User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 999,\r\n  \"name\": \"Updated Product\",\r\n  \"price\": 105.99,\r\n  \"category\": \"Some Other Category\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7085/api/Product",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7085",
+					"path": [
+						"api",
+						"Product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update - Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "456",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 999,\r\n  \"name\": \"Updated Product\",\r\n  \"price\": 105.99,\r\n  \"category\": \"Some Other Category\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7085/api/Product",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7085",
+					"path": [
+						"api",
+						"Product"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
